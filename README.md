@@ -17,3 +17,6 @@ Added a jump option for the player to make things more interesting,
 And because the player using one hand to control the movement of his character,
 He will have to choose if he need to jump now or shoot.
 
+
+*For more information please look at the Word file in the google drive.
+
