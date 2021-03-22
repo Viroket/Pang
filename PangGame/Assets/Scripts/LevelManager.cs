@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public GameObject LargeBall, LargestBall, BigGreenBall, youWonText;
@@ -40,6 +40,13 @@ public class LevelManager : MonoBehaviour
             BigGreenBall.SetActive(true);
             LevelCounter = 0;
             allowLvl3 = false;
+            youWonText.SetActive(true);
+
+            this.Wait(2f, () =>
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            });
+
         }
     }
 
@@ -54,5 +61,5 @@ public class LevelManager : MonoBehaviour
         youWonText.SetActive(false);
         LevelText = LevelText.GetComponent<Text>();
         LevelText.text = "Level: 1";
-    }    
+    }
 }
